@@ -63,7 +63,6 @@ public class Board {
         int counterHor = 0;
         String ID = board[0][0];
         for(int x = 0; x < board.length; x++){
-            System.out.println("x = " + x);
             for(int y = 0; y < board.length; y++){
 //                if(ID.equals()){
 //                    

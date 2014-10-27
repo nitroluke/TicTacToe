@@ -12,7 +12,7 @@ public class Driver
     {
         //new tic-tac-toe board
         Board board = new Board();
-
+        board.print();
         //two new players (conputer and human)
         Player computer = new Player(board, "X");   //Give computer player access to board and assign as X.
         Player human = new Player(board, "O");      //Give human player access to board and assign as O.
