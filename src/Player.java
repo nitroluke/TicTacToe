@@ -22,33 +22,34 @@ public class Player {
 
     public void computerMove() {
         boolean isEmpty = true;
-        int randX = (int) (Math.random() * 3);
-        int randY = (int) (Math.random() * 3);
-        System.out.println("randX = " + randX);
-        System.out.println("randY = " + randY);
+        int randX = (int) (Math.random() * board.length);
+        int randY = (int) (Math.random() * board.length);
+//        System.out.println("randX = " + randX);
+//        System.out.println("randY = " + randY);
         while (isEmpty) {
             if (board[randX][randY].equals(" ")) {
                 board[randX][randY] = ID;
+                System.out.println("the computer put a " + ID + " @ " + randX + "," + randY);
                 isEmpty = false;
             } else {
-                randX = (int) (Math.random() * 3);
-                randY = (int) (Math.random() * 3);
+                randX = (int) (Math.random() * board.length);
+                randY = (int) (Math.random() * board.length);
             }
         }
     }
 
     public void humanMove() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter a X coordinate from 0 " + board.length);
+        System.out.println("Please enter a X coordinate from 0 - " + (board.length -1));
         int x = in.nextInt();
-        System.out.println("input x = " + x);
-        System.out.println("Please enter a Y coordinate from 0 - " + board.length);
+//        System.out.println("input x = " + x);
+        System.out.println("Please enter a Y coordinate from 0 - " + (board.length-1));
         int y = in.nextInt();
-        System.out.println("input y = " + y);
-        if (x < 3 && x > -1 && y > -1 && y < 3) {
+//        System.out.println("input y = " + y);
+        if ((x < board.length && x > -1 && y > -1 && y < board.length) && board[x][y].compareTo(" ") == 0) { // if the values are in range and the spot isnt occupied
             board[x][y] = ID;
         } else {
-            System.out.println("Your input is fucking dumb");
+            System.out.println("Your input is dumb");
             humanMove();
         }
     }
