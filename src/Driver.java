@@ -1,7 +1,5 @@
 
 import java.util.Scanner;
-
-
 /**
  * This is a Driver for Outlab 5.  It controls the execution of a 
  * tic-tac-toe game.
