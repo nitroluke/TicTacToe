@@ -83,7 +83,7 @@ public class Board {
         int j = board.length - 1;
         for(int i = 0; i < board.length; i++){          //bottom left to top right
             
-                if(ID.equals(" ") || board[i][j].equals(" ")){  // may need to be optimized
+                if(board[i][j].equals(" ")){  // may need to be optimized
                     j--;
                     break;
                 }
@@ -103,18 +103,14 @@ public class Board {
         
         counter = 0;        //reset counter
         ID = board[0][0];   // to check the diagonal squares against
-        j = 0;              // reset j
         for(int i = 0; i < board.length; i++){              //top left to bottom right
             
-            if(ID.equals(" ") || board[i][j].equals(" ")){  // may need to be optimized
-                    j++;
+            if(board[i][i].equals(" ")){
                     break;
                 }
-                if(ID.equals(board[i][j])){
-                    j++;
+                if(ID.equals(board[i][i])){
                     counter++;
                 }else{
-                    j++;
                     break;
                 }
                 if(counter == board.length){
