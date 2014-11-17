@@ -9,6 +9,7 @@ import java.util.Scanner;
 /**
  *
  * @author nitroluke
+ * Last modified: 11/5/14
  */
 public class Player {
 
@@ -20,7 +21,7 @@ public class Player {
         this.ID = ID;
     }
 
-    public void computerMove() {
+    public void computerMove() { // make this smarter sometime.
         boolean isEmpty = true;
         int randX = (int) (Math.random() * board.length);
         int randY = (int) (Math.random() * board.length);
@@ -49,7 +50,7 @@ public class Player {
         if ((x < board.length && x > -1 && y > -1 && y < board.length) && board[x][y].compareTo(" ") == 0) { // if the values are in range and the spot isnt occupied
             board[x][y] = ID;
         } else {
-            System.out.println("Your input is dumb");
+            System.out.println("Your input is dumb, Please enter a valid coordinate");
             humanMove();
         }
     }

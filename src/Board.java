@@ -10,6 +10,7 @@ import java.util.Scanner;
 /**
  *
  * @author nitroluke
+ * Last Modified: 11/17/14
  */
 public class Board {
     private int sizeOfBoard = 3;
@@ -58,20 +59,6 @@ public class Board {
         System.out.println("");
     }
 
-//    private boolean checkForDiagWin() {         //make this dynamic soon
-//        String winner = board[1][1];            // check diag against board[1][1]
-//        if(winner.equals(" ")){                 // if board[1][1] = " " neither top left to bottom right or bottom left to bottom right will be 3 in a row 
-//            return false;
-//        }else if(board[0][0].equals(winner) && board[1][1].equals(winner) && board[2][2].equals(winner)){          //top left to bottom right.
-//            winString = winner;
-//            return true;
-//        }else if(board[0][2].equals(winner)  && board[1][1].equals(winner) && board[2][0].equals(winner)){        // bottom left to top right
-//            winString = winner;
-//            return true;
-//        }else{
-//            return false;
-//        }
-//    }
     
     public boolean checkForDiagWin(){
         String winner = board[0][0];
